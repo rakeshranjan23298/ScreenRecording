@@ -1,0 +1,62 @@
+
+Password- admin
+Error-
+*****Image with test1,test2, test3 should be in file where jar file reside.****
+
+
+
+1------  if url and path folder not found then go to setting select path and input URL(http://192.168.1.223:8989/Agent/)
+2------- if mic not opend
+3------- if One Drive is selected in path and one drive not open in pc.
+4------- if Agent Url wrong then browser don't redirect to the agent login page
+5------- if Servlet link not work then data not save into Database
+6------- image paste in dist folder (name-test.jpg) for taskbar.
+
+
+
+URL Example--	
+To	start- 		http://localhost:9696/?req=startrecord&a_id=9876&s_id=1225&mobile_number=9155104987&call_number=9155104987
+To stop- 		http://localhost:9696/?req=stoprecord&a_id=9876&s_id=1225&mobile_number=9155104987&call_number=9155104987		
+To Logout -		http://localhost:9696/?req=logout&a_id=9876&s_id=1225&mobile_number=9155104987&call_number=9155104987
+				http://localhost:9696/?req=logout&a_id=9876&s_id=1225
+
+
+To Login -		http://localhost:9696/?req=login&a_id=9876&s_id=1225&mobile_number=9155104987&call_number=9155104987
+				http://localhost:9696/?req=login
+				
+				
+agent Url= 		http://192.168.1.223:8989/Agent/
+
+
+Servlet Api- Example   url-  	http://192.168.1.223:8989/DSR/Getstatus2
+Servlet Api Format- 		(url+"?agent_id=" + userName + "&agent_pwd=" + password + "&ext_num=" + ext);
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Servlet table structure= 
+
+DROP TABLE IF EXISTS `test_1`.`tbl_screen_recording_data`;
+CREATE TABLE  `test_1`.`tbl_screen_recording_data` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `file_name` varchar(100) DEFAULT NULL,
+  `mobile` varchar(100) DEFAULT NULL,
+  `call_number` varchar(100) DEFAULT NULL,
+  `agent_id` varchar(100) DEFAULT NULL,
+  `service_id` varchar(100) DEFAULT NULL,
+  `audio_file_name` varchar(100) DEFAULT NULL,
+  `video_file_name` varchar(100) DEFAULT NULL,
+  `start_time` varchar(100) DEFAULT NULL,
+  `end_time` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
